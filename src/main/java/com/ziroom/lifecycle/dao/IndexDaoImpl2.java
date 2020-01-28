@@ -4,6 +4,7 @@ import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Primary;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
@@ -15,7 +16,8 @@ import javax.annotation.PostConstruct;
  * date £º2020-01-28 18:14
  * </pre>
  */
-//@Component
+@Component
+@Profile("dao2")
 //@Lazy
 public class IndexDaoImpl2 implements IndexDao,InitializingBean,DisposableBean {
 
