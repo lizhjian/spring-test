@@ -68,6 +68,7 @@
 # Spring的生命周期的回调
 - 初始化之后执行
   - bean实现类实现InitializingBean接口(DisposableBean)
+  - 通过xml配置 参考***spring-lifecycle.xml init-method ***
   - bean实现类添加带PostConstruct注解的方法
    ```
      @PostConstruct
@@ -75,6 +76,15 @@
            System.out.println("default  init ...2 .. ");
        }
    ```
+  - 总结:第一种是侵入式限制太死 第三种最好
+  - 当bean设置为lazy时 不会执行构造方法
+  - 排序扫描
+  ```
+  AppCongif.java中
+  @ComponentScan(value = "com.ziroom.lifecycle",excludeFilters = {@ComponentScan.Filter(type = FilterType.REGEX,pattern = "com.ziroom.lifecycle.*")})
+
+  ```
+   getBean(id)和getBean(Class)区别于联系???  
 
 
    

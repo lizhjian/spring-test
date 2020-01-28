@@ -13,16 +13,18 @@ import javax.annotation.PostConstruct;
  * date ：2020-01-28 18:14
  * </pre>
  */
-public class IndexDaoImpl implements IndexDao,InitializingBean,DisposableBean {
+//@Component
+//@Lazy
+public class IndexDaoImpl3 implements IndexDao,InitializingBean,DisposableBean {
 
-    public IndexDaoImpl() {
+    public IndexDaoImpl3() {
         System.out.println("IndexDaoImpl...constructor ");
     }
 
     //构造方法之后执行该方法
     public void afterPropertiesSet() throws Exception {
 
-        System.out.println("init");
+        System.out.println("init33");
     }
 
     //容器销毁的时候执行该方法
@@ -36,6 +38,6 @@ public class IndexDaoImpl implements IndexDao,InitializingBean,DisposableBean {
     }
     @PostConstruct
     public void init2(){
-        System.out.println("default  init ...2 .. ");
+        System.out.println("default  init ...4 .. ");
     }
 }

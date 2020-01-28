@@ -11,7 +11,17 @@
 
 
     <!--init-method 告诉这个bean初始化时要执行哪个方法-->
-    <bean id="dao2" name="dao" class="com.ziroom.lifecycle.dao.IndexDaoImpl" init-method="init">
+    <!--<bean id="dao1" name="dao2" class="com.ziroom.lifecycle.dao.IndexDaoImpl1" init-method="init" lazy-init="true">-->
 
+    <!--</bean>-->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+
+    </bean>
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="jdbcUrl" value="jdbc:mysql://127.0.0.1:3306/my_test?allowPublicKeyRetrieval=true"></property>
+        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+        <property name="user" value="root"></property>
+        <property name="password" value="123456"></property>
     </bean>
 </beans>
