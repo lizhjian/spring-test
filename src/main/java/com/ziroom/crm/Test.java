@@ -20,8 +20,8 @@ public class Test {
 
         IndexService indexService1 = (IndexService)context.getBean("indexService");
         IndexService indexService2 = (IndexService)context.getBean("indexService");
-        System.out.println(indexService1.hashCode());
-        System.out.println(indexService2.hashCode());
+        indexService1.print();
+        indexService2.print();
 
     }
 }

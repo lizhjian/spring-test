@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
  * date £º2020-01-27 20:21
  * </pre>
  */
-@Repository
+//@Repository
 public class IndexDaoImpl2 implements IndexDao {
 
     public void daoPrint() {

@@ -1,5 +1,6 @@
 package com.ziroom.crm;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Repository;
  * </pre>
  */
 @Repository
+@Scope("prototype")
 public class IndexDaoImpl1 implements IndexDao {
 
     public void daoPrint() {

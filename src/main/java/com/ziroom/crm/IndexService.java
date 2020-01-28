@@ -1,6 +1,7 @@
 package com.ziroom.crm;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Lookup;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
@@ -16,14 +17,19 @@ import javax.annotation.Resource;
  */
 @Component("indexService")
 @Scope("singleton")
-public class IndexService {
+public abstract class IndexService {
 
 //    @Resource
 //    private IndexDao indexDa;
 //
-//    public void print(){
-//        indexDa.daoPrint();
-//    }
+
+    @Lookup
+    public abstract IndexDao getIndexDa();
+
+    public void print(){
+        System.out.println(this.hashCode());
+        System.out.println(getIndexDa().hashCode());
+    }
     //根据set方法注入
 //    public void setIndexDaoImpl2(IndexDao dao) {
 //        this.indexDaoImpl2 = dao;

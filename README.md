@@ -50,4 +50,16 @@
    @Scope("singleton")
    public class IndexService{}
    ``` 
-   - 如果service中引入了dao是prototype模式则失去了意义,service及dao全是原型 
+   - 如果service中引入了dao是prototype模式则失去了意义,service及dao全是原型，不会重新创建
+     - 解决上述问题是在service中引入dao时加入(不用autoWire dao了)
+   ```
+   @Lookup
+       public IndexDao getIndexDa() {
+           return null;
+       }  
+   ```
+     - 或者用官网的方法
+   ```
+      @Lookup
+          public abstract IndexDao getIndexDa();
+   ```
