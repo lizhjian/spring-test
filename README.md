@@ -27,7 +27,7 @@
    ```
        <bean id="indexService" class="com.ziroom.crm.IndexService" autowire="byType">
    ```
-   - @Autowired 默认是用byType的方式注入所以当dao接口有个两个子类实现时会报错
+   - @Autowired 默认优先**byType**的方式注入,其次根据**byName**因此所以当dao接口有个两个子类实现且无法根据属性名称注入时会报错
    ```
        No qualifying bean of type 'com.ziroom.crm.IndexDao' available: expected single matching bean but found 2: indexDaoImpl1,indexDaoImpl2
    ``` 
@@ -41,3 +41,13 @@
          }
      ```    
      则会降级 注入IndexDaoImpl2
+- spring命名规则类BeanNameFactory   
+- spring的作用域
+   - singleton 每次都是一个service
+   - prototype 每次都new一个service
+   ```
+   @Component("indexService")
+   @Scope("singleton")
+   public class IndexService{}
+   ``` 
+   - 如果service中引入了dao是prototype模式则失去了意义,service及dao全是原型 

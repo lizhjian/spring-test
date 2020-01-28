@@ -18,7 +18,10 @@ public class Test {
         AnnotationConfigApplicationContext context
                 = new AnnotationConfigApplicationContext(Spring.class);
 
-        IndexService indexService = (IndexService)context.getBean("indexService");
-        indexService.print();
+        IndexService indexService1 = (IndexService)context.getBean("indexService");
+        IndexService indexService2 = (IndexService)context.getBean("indexService");
+        System.out.println(indexService1.hashCode());
+        System.out.println(indexService2.hashCode());
+
     }
 }
