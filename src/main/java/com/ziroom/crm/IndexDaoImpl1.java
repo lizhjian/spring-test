@@ -1,6 +1,7 @@
 package com.ziroom.crm;
 
 import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
 
 /**
  * <pre>
@@ -9,10 +10,10 @@ import org.springframework.stereotype.Component;
  * date £º2020-01-27 20:21
  * </pre>
  */
-@Component("dao2")
-public class IndexDaoImpl implements IndexDao {
+@Repository
+public class IndexDaoImpl1 implements IndexDao {
 
     public void daoPrint() {
-        System.out.println("indexDao...");
+        System.out.println("indexDao..1...");
     }
 }

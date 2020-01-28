@@ -12,7 +12,7 @@ import org.springframework.context.annotation.ImportResource;
  * </pre>
  */
 @Configuration  //代表这是个配置文件
-@ComponentScan("com.ziroom")  //代表扫描com.ziroom
-@ImportResource("classpath:spring.xml") //代表我加载spring.xml文件
+@ComponentScan("com.ziroom")  //代表扫描并开启com.ziroom
+@ImportResource("classpath:spring.xml") //代表要加载spring.xml文件
 public class Spring {
 }

@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.Resource;
+
 /**
  * <pre>
  * desc ：service
@@ -14,15 +16,15 @@ import org.springframework.stereotype.Component;
 @Component("indexService")
 public class IndexService {
 
-    @Autowired
-    private IndexDao dao;
+    @Resource
+    private IndexDao indexDaoImpl1;
 
     public void print(){
-        dao.daoPrint();
+        indexDaoImpl1.daoPrint();
     }
     //根据set方法注入
-//    public void setDao(IndexDao dao) {
-//        this.dao = dao;
+//    public void setIndexDaoImpl2(IndexDao dao) {
+//        this.indexDaoImpl2 = dao;
 //    }
 
 //    public IndexService(IndexDao dao) {

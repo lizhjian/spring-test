@@ -15,4 +15,29 @@
   - 如果通过java-config方式  
     则需要配置Spring.class 参考Spring类,如果dao类本身不使用@Compnent则需要在xml中配置bean
     并通过@ImportResource("classpath:spring.xml")进行导入
-    
+- 自动装配
+   - byType(用byType时如果有两个实现IndexDaoImpl1/IndexDaoImpl2 则报错)
+   ```     default-autowire="byType"
+           <bean id="dao1" class="com.ziroom.crm.IndexDaoImpl1"></bean>
+           <bean id="dao2" class="com.ziroom.crm.IndexDaoImpl2"></bean>
+           <bean id="indexService" class="com.ziroom.crm.IndexService">
+   ```
+   - byName(有多个实现类则需要通过byName 即:void setDao2(IndexDao dao)) 
+   - 定制装配(IndexService 要通过byType查找并装配自己的成员 )
+   ```
+       <bean id="indexService" class="com.ziroom.crm.IndexService" autowire="byType">
+   ```
+   - @Autowired 默认是用byType的方式注入所以当dao接口有个两个子类实现时会报错
+   ```
+       No qualifying bean of type 'com.ziroom.crm.IndexDao' available: expected single matching bean but found 2: indexDaoImpl1,indexDaoImpl2
+   ``` 
+   - @Resource 默认采用byName(属性名)去处理同时可以不用下面的setXxx方法
+     - 如果只有
+     ```
+     @Resource
+         private IndexDao indexDaoImpl1;
+         @Repository
+         public class IndexDaoImpl2{
+         }
+     ```    
+     则会降级 注入IndexDaoImpl2
