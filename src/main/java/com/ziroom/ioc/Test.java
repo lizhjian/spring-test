@@ -1,7 +1,6 @@
-package com.ziroom.crm;
+package com.ziroom.ioc;
 
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * <pre>
@@ -13,7 +12,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class Test {
     public static void main(String[] args) {
 
-        //ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring.xml");
+        //ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring-ioc.xml");
         //第三种方式 通过一个Spring.class类
         AnnotationConfigApplicationContext context
                 = new AnnotationConfigApplicationContext(Spring.class);

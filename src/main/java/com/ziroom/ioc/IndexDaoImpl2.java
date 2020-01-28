@@ -1,6 +1,4 @@
-package com.ziroom.crm;
-
-import org.springframework.stereotype.Repository;
+package com.ziroom.ioc;
 
 /**
  * <pre>

@@ -1,4 +1,4 @@
-package com.ziroom.crm;
+package com.ziroom.ioc;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -13,6 +13,6 @@ import org.springframework.context.annotation.ImportResource;
  */
 @Configuration  //代表这是个配置文件
 @ComponentScan("com.ziroom")  //代表扫描并开启com.ziroom
-@ImportResource("classpath:spring.xml") //代表要加载spring.xml文件
+@ImportResource("classpath:spring-ioc.xml") //代表要加载spring.xml文件
 public class Spring {
 }

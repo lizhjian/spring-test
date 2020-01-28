@@ -1,7 +1,6 @@
-package com.ziroom.crm;
+package com.ziroom.ioc;
 
 import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
 
 /**

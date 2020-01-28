@@ -1,4 +1,4 @@
-package com.ziroom.crm;
+package com.ziroom.ioc;
 
 /**
  * <pre>

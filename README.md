@@ -18,18 +18,18 @@
 - 自动装配
    - byType(用byType时如果有两个实现IndexDaoImpl1/IndexDaoImpl2 则报错)
    ```     default-autowire="byType"
-           <bean id="dao1" class="com.ziroom.crm.IndexDaoImpl1"></bean>
-           <bean id="dao2" class="com.ziroom.crm.IndexDaoImpl2"></bean>
-           <bean id="indexService" class="com.ziroom.crm.IndexService">
+           <bean id="dao1" class="com.ziroom.ioc.IndexDaoImpl1"></bean>
+           <bean id="dao2" class="com.ziroom.ioc.IndexDaoImpl2"></bean>
+           <bean id="indexService" class="com.ziroom.ioc.IndexService">
    ```
    - byName(有多个实现类则需要通过byName 即:void setDao2(IndexDao dao)) 
    - 定制装配(IndexService 要通过byType查找并装配自己的成员 )
    ```
-       <bean id="indexService" class="com.ziroom.crm.IndexService" autowire="byType">
+       <bean id="indexService" class="com.ziroom.ioc.IndexService" autowire="byType">
    ```
    - @Autowired 默认优先**byType**的方式注入,其次根据**byName**因此所以当dao接口有个两个子类实现且无法根据属性名称注入时会报错
    ```
-       No qualifying bean of type 'com.ziroom.crm.IndexDao' available: expected single matching bean but found 2: indexDaoImpl1,indexDaoImpl2
+       No qualifying bean of type 'com.ziroom.ioc.IndexDao' available: expected single matching bean but found 2: indexDaoImpl1,indexDaoImpl2
    ``` 
    - @Resource 默认采用byName(属性名)去处理同时可以不用下面的setXxx方法
      - 如果只有
@@ -61,5 +61,20 @@
      - 或者用官网的方法
    ```
       @Lookup
-          public abstract IndexDao getIndexDa();
+          public abstract  IndexDao getIndexDa();
    ```
+- Resource 与 AutoWired的区别与联系(博客)
+
+# Spring的生命周期的回调
+- 初始化之后执行
+  - bean实现类实现InitializingBean接口(DisposableBean)
+  - bean实现类添加带PostConstruct注解的方法
+   ```
+     @PostConstruct
+       public void init2(){
+           System.out.println("default  init ...2 .. ");
+       }
+   ```
+
+
+   

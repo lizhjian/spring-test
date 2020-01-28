@@ -15,11 +15,11 @@
     <!--<context:annotation-config></context:annotation-config>-->
     <!--开启扫描-->
     <!--<context:component-scan base-package="com"/>-->
-    <!--<bean id="dao2" name="dao" class="com.ziroom.crm.IndexDaoImpl1"></bean>-->
+    <!--<bean id="dao2" name="dao" class="com.ziroom.ioc.IndexDaoImpl1"></bean>-->
 
 
     <!--</bean>-->
-    <!--<bean id="indexService" class="com.ziroom.crm.IndexService" autowire="byType">-->
+    <!--<bean id="indexService" class="com.ziroom.ioc.IndexService" autowire="byType">-->
         <!--第一种 根据set方式注入,这里的name对应的IndexService 里面的setdao-->
         <!--<property name="dao" ref="dao1"></property>-->
         <!--第二种 根据构造函数的方式注入 加入xmlns:c的命名空间可以用c:dao-ref 注入-->
