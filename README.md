@@ -88,18 +88,43 @@
  
 # Aop
 - 配置aop的两种方法
- - java-config
+  - java-config
  ```
- @Configuration
- @EnableAspectJAutoProxy
- public class AppConfig {
- 
- }
- ``` 
+        @Configuration
+        @ComponentScan("com.ziroom.aop")
+        @EnableAspectJAutoProxy
+        public class AppConfig {
+        
+        }
+          ** 定义切点**
+          @Pointcut("execution(* com.ziroom.aop.dao.*.*(*))")
+            public void pointCut(){
+        
+            }
+            ** 连接切点 **
+            @Before("pointCut()")
+            public void beforeOutPut(JoinPoint jp){
+        
+                System.out.println("前置方法...."+jp.getSignature().getName());
+            }
+   ``` 
  - xml方式
  ```
- <aop:aspectj-autoproxy/>
- ```   
+       <aop:aspectj-autoproxy/>
+       ** 初始化bean **
+       <bean id="myAspect" class="com.ziroom.aop.advice.ZiRoomAspectj"></bean>
+       <aop:config>
+               
+               <aop:aspect id="aspect" ref="myAspect">
+               ** 定义切点**
+                   <aop:pointcut id="aspectCut" expression="execution(* com.ziroom.aop.dao.*.*(*))"/>
+               ** 连接切点 **
+                   <aop:before method="beforeOutPut" pointcut-ref="aspectCut"></aop:before>
+                   <aop:after method="afterOutPut" pointcut-ref="aspectCut"></aop:after>
+                   <aop:around method="arountOutPut" pointcut-ref="aspectCut"></aop:around>
+               </aop:aspect>
+           </aop:config>
+ ```
 
 
    

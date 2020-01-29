@@ -1,6 +1,8 @@
 package com.ziroom.aop.test;
 
+import com.ziroom.aop.app.AppConfig;
 import com.ziroom.aop.dao.IndexDao;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
@@ -12,8 +14,17 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  */
 public class Test {
     public static void main(String[] args) {
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring-aop.xml");
-        IndexDao indexDao = (IndexDao)context.getBean("indexDao");
-        indexDao.print("abc");
+//        xml方式实现Aop
+//        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring-aop.xml");
+//        IndexDao indexDao = (IndexDao)context.getBean("indexDao");
+//        indexDao.print("abc");
+
+
+        /*注解方式实现Aop*/
+
+        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
+        IndexDao indexDao = context.getBean(IndexDao.class);
+        indexDao.print("ssss");
+
     }
 }

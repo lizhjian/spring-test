@@ -24,6 +24,4 @@
             <aop:around method="arountOutPut" pointcut-ref="aspectCut"></aop:around>
         </aop:aspect>
     </aop:config>
-
-
 </beans>
