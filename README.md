@@ -84,7 +84,22 @@
   @ComponentScan(value = "com.ziroom.lifecycle",excludeFilters = {@ComponentScan.Filter(type = FilterType.REGEX,pattern = "com.ziroom.lifecycle.*")})
 
   ```
-   getBean(id)和getBean(Class)区别于联系???  
+   getBean(id)和getBean(Class)区别于联系???
+ 
+# Aop
+- 配置aop的两种方法
+ - java-config
+ ```
+ @Configuration
+ @EnableAspectJAutoProxy
+ public class AppConfig {
+ 
+ }
+ ``` 
+ - xml方式
+ ```
+ <aop:aspectj-autoproxy/>
+ ```   
 
 
    
