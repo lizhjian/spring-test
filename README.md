@@ -86,7 +86,7 @@
   ```
    getBean(id)和getBean(Class)区别于联系???
  
-# Aop
+# SpringAop1
 - 配置aop的两种方法
   - java-config
  ```
@@ -125,6 +125,31 @@
                </aop:aspect>
            </aop:config>
  ```
+- 切面方法
+  - execution以及annotation等
+    ```
+    //切带注解的方法
+        @Pointcut("@annotation(com.ziroom.aop.Ziroom)")
+        public void pointCutAnno(){
+    
+        }
+        
+    ```
+  - this(当前代理对象符合表达式的可以执行切面) && target(目标对象)
+  https://blog.csdn.net/yhl_jxy/article/details/80586785
+  https://blog.csdn.net/yhl_jxy/article/details/80633194
 
+# springAop2
+ - JoinPoint是连接点，可以根据这个对象得到连接信息 
+     比如类所在目标对象或代理对象的参数 方法的返回类型
+ - @DeclareParents注解会对其他没有实现方法的Bean进行方法克隆
+ - 切面是单例的**ZiRoomAspectj**
+ - 切面用原型处理
+ ```
+ @Aspect("perthis(this(com.ziroom.aop.dao.IndexDao))")  切面设置为原型+ 指定类型下是原型的(即indexDao用的时候切面是原型)
+ @Scope("prototype")
+ ```    
+    
+    
 
    
