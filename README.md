@@ -1,38 +1,38 @@
 # ioc-test
-- [iocµÄÈıÖÖ×¢Èë·½Ê½](https://shimo.im/docs/uKMbBVwL3dUusKHV/read)
-  - ¸ù¾İset·½·¨/¸ù¾İ¹¹Ôì·½·¨
-    - ¼ÓÈëxmlns:cµÄÃüÃû¿Õ¼ä¿ÉÒÔÓÃc:dao-ref ×¢Èë
-  - ¸ù¾İ×¢½â·½·¨
-  - ¸ù¾İjava-config·½Ê½
-- ×Ü½á: ÏëÒªÓÃµ½Ò»¸öbeanµÄ×¢Èë
-  - Èç¹ûÍ¨¹ıxmlµÄ·½Ê½,Ö»ÄÜÍ¨¹ıÉùÃ÷bean±êÇ©µÄ·½Ê½,ÏëÊµÏÖbean-B ÖĞ×¢Èëbean-A
- ÏÈ½«AÉùÃ÷Îªbean È»ºóÔÚBÖĞÍ¨¹ısetA »òÕßconstructorAµÄ·½Ê½×¢Èë ´ËÊ±BÖĞsetA/constructorAÓëxmlÖĞBµÄ
- property name="dao" »òÕßconstructor-arg Ò»Ò»¶ÔÓ¦ 
-  - Èç¹ûÍ¨¹ı×¢½â·½Ê½ 
-    - bean-B c:dao-ref="dao2"ÕâÖÖ dao2»òÕßÊÇ±»ÉùÃ÷Îªbean id = dao2 »òÕßcomponent("dao2")
-    B±¾Éí»¹ÊÇÒªÓĞ¹¹Ôìº¯Êı
-    - Èç¹ûB²»ÓÃxmlÅäÖÃ ÔòBĞèÒªcomponent("B")
-  - Èç¹ûÍ¨¹ıjava-config·½Ê½  
-    ÔòĞèÒªÅäÖÃSpring.class ²Î¿¼SpringÀà,Èç¹ûdaoÀà±¾Éí²»Ê¹ÓÃ@CompnentÔòĞèÒªÔÚxmlÖĞÅäÖÃbean
-    ²¢Í¨¹ı@ImportResource("classpath:spring.xml")½øĞĞµ¼Èë
-- ×Ô¶¯×°Åä
-   - byType(ÓÃbyTypeÊ±Èç¹ûÓĞÁ½¸öÊµÏÖIndexDaoImpl1/IndexDaoImpl2 Ôò±¨´í)
+- [iocçš„ä¸‰ç§æ³¨å…¥æ–¹å¼](https://shimo.im/docs/uKMbBVwL3dUusKHV/read)
+  - æ ¹æ®setæ–¹æ³•/æ ¹æ®æ„é€ æ–¹æ³•
+    - åŠ å…¥xmlns:cçš„å‘½åç©ºé—´å¯ä»¥ç”¨c:dao-ref æ³¨å…¥
+  - æ ¹æ®æ³¨è§£æ–¹æ³•
+  - æ ¹æ®java-configæ–¹å¼
+- æ€»ç»“: æƒ³è¦ç”¨åˆ°ä¸€ä¸ªbeançš„æ³¨å…¥
+  - å¦‚æœé€šè¿‡xmlçš„æ–¹å¼,åªèƒ½é€šè¿‡å£°æ˜beanæ ‡ç­¾çš„æ–¹å¼,æƒ³å®ç°bean-B ä¸­æ³¨å…¥bean-A
+ å…ˆå°†Aå£°æ˜ä¸ºbean ç„¶ååœ¨Bä¸­é€šè¿‡setA æˆ–è€…constructorAçš„æ–¹å¼æ³¨å…¥ æ­¤æ—¶Bä¸­setA/constructorAä¸xmlä¸­Bçš„
+ property name="dao" æˆ–è€…constructor-arg ä¸€ä¸€å¯¹åº” 
+  - å¦‚æœé€šè¿‡æ³¨è§£æ–¹å¼ 
+    - bean-B c:dao-ref="dao2"è¿™ç§ dao2æˆ–è€…æ˜¯è¢«å£°æ˜ä¸ºbean id = dao2 æˆ–è€…component("dao2")
+    Bæœ¬èº«è¿˜æ˜¯è¦æœ‰æ„é€ å‡½æ•°
+    - å¦‚æœBä¸ç”¨xmlé…ç½® åˆ™Béœ€è¦component("B")
+  - å¦‚æœé€šè¿‡java-configæ–¹å¼  
+    åˆ™éœ€è¦é…ç½®Spring.class å‚è€ƒSpringç±»,å¦‚æœdaoç±»æœ¬èº«ä¸ä½¿ç”¨@Compnentåˆ™éœ€è¦åœ¨xmlä¸­é…ç½®bean
+    å¹¶é€šè¿‡@ImportResource("classpath:spring.xml")è¿›è¡Œå¯¼å…¥
+- è‡ªåŠ¨è£…é…
+   - byType(ç”¨byTypeæ—¶å¦‚æœæœ‰ä¸¤ä¸ªå®ç°IndexDaoImpl1/IndexDaoImpl2 åˆ™æŠ¥é”™)
    ```     default-autowire="byType"
            <bean id="dao1" class="com.ziroom.ioc.IndexDaoImpl1"></bean>
            <bean id="dao2" class="com.ziroom.ioc.IndexDaoImpl2"></bean>
            <bean id="indexService" class="com.ziroom.ioc.IndexService">
    ```
-   - byName(ÓĞ¶à¸öÊµÏÖÀàÔòĞèÒªÍ¨¹ıbyName ¼´:void setDao2(IndexDao dao)) 
-   - ¶¨ÖÆ×°Åä(IndexService ÒªÍ¨¹ıbyType²éÕÒ²¢×°Åä×Ô¼ºµÄ³ÉÔ± )
+   - byName(æœ‰å¤šä¸ªå®ç°ç±»åˆ™éœ€è¦é€šè¿‡byName å³:void setDao2(IndexDao dao)) 
+   - å®šåˆ¶è£…é…(IndexService è¦é€šè¿‡byTypeæŸ¥æ‰¾å¹¶è£…é…è‡ªå·±çš„æˆå‘˜ )
    ```
        <bean id="indexService" class="com.ziroom.ioc.IndexService" autowire="byType">
    ```
-   - @Autowired Ä¬ÈÏÓÅÏÈ**byType**µÄ·½Ê½×¢Èë,Æä´Î¸ù¾İ**byName**Òò´ËËùÒÔµ±dao½Ó¿ÚÓĞ¸öÁ½¸ö×ÓÀàÊµÏÖÇÒÎŞ·¨¸ù¾İÊôĞÔÃû³Æ×¢ÈëÊ±»á±¨´í
+   - @Autowired é»˜è®¤ä¼˜å…ˆ**byType**çš„æ–¹å¼æ³¨å…¥,å…¶æ¬¡æ ¹æ®**byName**å› æ­¤æ‰€ä»¥å½“daoæ¥å£æœ‰ä¸ªä¸¤ä¸ªå­ç±»å®ç°ä¸”æ— æ³•æ ¹æ®å±æ€§åç§°æ³¨å…¥æ—¶ä¼šæŠ¥é”™
    ```
        No qualifying bean of type 'com.ziroom.ioc.IndexDao' available: expected single matching bean but found 2: indexDaoImpl1,indexDaoImpl2
    ``` 
-   - @Resource Ä¬ÈÏ²ÉÓÃbyName(ÊôĞÔÃû)È¥´¦ÀíÍ¬Ê±¿ÉÒÔ²»ÓÃÏÂÃæµÄsetXxx·½·¨
-     - Èç¹ûÖ»ÓĞ
+   - @Resource é»˜è®¤é‡‡ç”¨byName(å±æ€§å)å»å¤„ç†åŒæ—¶å¯ä»¥ä¸ç”¨ä¸‹é¢çš„setXxxæ–¹æ³•
+     - å¦‚æœåªæœ‰
      ```
      @Resource
          private IndexDao indexDaoImpl1;
@@ -40,54 +40,54 @@
          public class IndexDaoImpl2{
          }
      ```    
-     Ôò»á½µ¼¶ ×¢ÈëIndexDaoImpl2
-- springÃüÃû¹æÔòÀàBeanNameFactory   
-- springµÄ×÷ÓÃÓò
-   - singleton Ã¿´Î¶¼ÊÇÒ»¸öservice
-   - prototype Ã¿´Î¶¼newÒ»¸öservice
+     åˆ™ä¼šé™çº§ æ³¨å…¥IndexDaoImpl2
+- springå‘½åè§„åˆ™ç±»BeanNameFactory   
+- springçš„ä½œç”¨åŸŸ
+   - singleton æ¯æ¬¡éƒ½æ˜¯ä¸€ä¸ªservice
+   - prototype æ¯æ¬¡éƒ½newä¸€ä¸ªservice
    ```
    @Component("indexService")
    @Scope("singleton")
    public class IndexService{}
    ``` 
-   - Èç¹ûserviceÖĞÒıÈëÁËdaoÊÇprototypeÄ£Ê½ÔòÊ§È¥ÁËÒâÒå,service¼°daoÈ«ÊÇÔ­ĞÍ£¬²»»áÖØĞÂ´´½¨
-     - ½â¾öÉÏÊöÎÊÌâÊÇÔÚserviceÖĞÒıÈëdaoÊ±¼ÓÈë(²»ÓÃautoWire daoÁË)
+   - å¦‚æœserviceä¸­å¼•å…¥äº†daoæ˜¯prototypeæ¨¡å¼åˆ™å¤±å»äº†æ„ä¹‰,serviceåŠdaoå…¨æ˜¯åŸå‹ï¼Œä¸ä¼šé‡æ–°åˆ›å»º
+     - è§£å†³ä¸Šè¿°é—®é¢˜æ˜¯åœ¨serviceä¸­å¼•å…¥daoæ—¶åŠ å…¥(ä¸ç”¨autoWire daoäº†)
    ```
    @Lookup
        public IndexDao getIndexDa() {
            return null;
        }  
    ```
-     - »òÕßÓÃ¹ÙÍøµÄ·½·¨
+     - æˆ–è€…ç”¨å®˜ç½‘çš„æ–¹æ³•
    ```
       @Lookup
           public abstract  IndexDao getIndexDa();
    ```
-- Resource Óë AutoWiredµÄÇø±ğÓëÁªÏµ(²©¿Í)
+- Resource ä¸ AutoWiredçš„åŒºåˆ«ä¸è”ç³»(åšå®¢)
 
-# SpringµÄÉúÃüÖÜÆÚµÄ»Øµ÷
-- ³õÊ¼»¯Ö®ºóÖ´ĞĞ
-  - beanÊµÏÖÀàÊµÏÖInitializingBean½Ó¿Ú(DisposableBean)
-  - Í¨¹ıxmlÅäÖÃ ²Î¿¼***spring-lifecycle.xml init-method ***
-  - beanÊµÏÖÀàÌí¼Ó´øPostConstruct×¢½âµÄ·½·¨
+# Springçš„ç”Ÿå‘½å‘¨æœŸçš„å›è°ƒ
+- åˆå§‹åŒ–ä¹‹åæ‰§è¡Œ
+  - beanå®ç°ç±»å®ç°InitializingBeanæ¥å£(DisposableBean)
+  - é€šè¿‡xmlé…ç½® å‚è€ƒ***spring-lifecycle.xml init-method ***
+  - beanå®ç°ç±»æ·»åŠ å¸¦PostConstructæ³¨è§£çš„æ–¹æ³•
    ```
      @PostConstruct
        public void init2(){
            System.out.println("default  init ...2 .. ");
        }
    ```
-  - ×Ü½á:µÚÒ»ÖÖÊÇÇÖÈëÊ½ÏŞÖÆÌ«ËÀ µÚÈıÖÖ×îºÃ
-  - µ±beanÉèÖÃÎªlazyÊ± ²»»áÖ´ĞĞ¹¹Ôì·½·¨
-  - ÅÅĞòÉ¨Ãè
+  - æ€»ç»“:ç¬¬ä¸€ç§æ˜¯ä¾µå…¥å¼é™åˆ¶å¤ªæ­» ç¬¬ä¸‰ç§æœ€å¥½
+  - å½“beanè®¾ç½®ä¸ºlazyæ—¶ ä¸ä¼šæ‰§è¡Œæ„é€ æ–¹æ³•
+  - æ’åºæ‰«æ
   ```
-  AppCongif.javaÖĞ
+  AppCongif.javaä¸­
   @ComponentScan(value = "com.ziroom.lifecycle",excludeFilters = {@ComponentScan.Filter(type = FilterType.REGEX,pattern = "com.ziroom.lifecycle.*")})
 
   ```
-   getBean(id)ºÍgetBean(Class)Çø±ğÓÚÁªÏµ???
+   getBean(id)å’ŒgetBean(Class)åŒºåˆ«äºè”ç³»???
  
 # SpringAop1
-- ÅäÖÃaopµÄÁ½ÖÖ·½·¨
+- é…ç½®aopçš„ä¸¤ç§æ–¹æ³•
   - java-config
  ```
         @Configuration
@@ -96,60 +96,58 @@
         public class AppConfig {
         
         }
-          ** ¶¨ÒåÇĞµã**
+          ** å®šä¹‰åˆ‡ç‚¹**
           @Pointcut("execution(* com.ziroom.aop.dao.*.*(*))")
             public void pointCut(){
         
             }
-            ** Á¬½ÓÇĞµã **
+            ** è¿æ¥åˆ‡ç‚¹ **
             @Before("pointCut()")
             public void beforeOutPut(JoinPoint jp){
         
-                System.out.println("Ç°ÖÃ·½·¨...."+jp.getSignature().getName());
+                System.out.println("å‰ç½®æ–¹æ³•...."+jp.getSignature().getName());
             }
    ``` 
- - xml·½Ê½
+ - xmlæ–¹å¼
  ```
        <aop:aspectj-autoproxy/>
-       ** ³õÊ¼»¯bean **
+       ** åˆå§‹åŒ–bean **
        <bean id="myAspect" class="com.ziroom.aop.advice.ZiRoomAspectj"></bean>
        <aop:config>
                
                <aop:aspect id="aspect" ref="myAspect">
-               ** ¶¨ÒåÇĞµã**
+               ** å®šä¹‰åˆ‡ç‚¹**
                    <aop:pointcut id="aspectCut" expression="execution(* com.ziroom.aop.dao.*.*(*))"/>
-               ** Á¬½ÓÇĞµã **
+               ** è¿æ¥åˆ‡ç‚¹ **
                    <aop:before method="beforeOutPut" pointcut-ref="aspectCut"></aop:before>
                    <aop:after method="afterOutPut" pointcut-ref="aspectCut"></aop:after>
                    <aop:around method="arountOutPut" pointcut-ref="aspectCut"></aop:around>
                </aop:aspect>
            </aop:config>
  ```
-- ÇĞÃæ·½·¨
-  - executionÒÔ¼°annotationµÈ
+- åˆ‡é¢æ–¹æ³•
+  - executionä»¥åŠannotationç­‰
     ```
-    //ÇĞ´ø×¢½âµÄ·½·¨
+    //åˆ‡å¸¦æ³¨è§£çš„æ–¹æ³•
         @Pointcut("@annotation(com.ziroom.aop.Ziroom)")
         public void pointCutAnno(){
     
         }
         
     ```
-  - this(µ±Ç°´úÀí¶ÔÏó·ûºÏ±í´ïÊ½µÄ¿ÉÒÔÖ´ĞĞÇĞÃæ) && target(Ä¿±ê¶ÔÏó)
+  - this(å½“å‰ä»£ç†å¯¹è±¡ç¬¦åˆè¡¨è¾¾å¼çš„å¯ä»¥æ‰§è¡Œåˆ‡é¢) && target(ç›®æ ‡å¯¹è±¡)
   https://blog.csdn.net/yhl_jxy/article/details/80586785
   https://blog.csdn.net/yhl_jxy/article/details/80633194
 
 # springAop2
- - JoinPointÊÇÁ¬½Óµã£¬¿ÉÒÔ¸ù¾İÕâ¸ö¶ÔÏóµÃµ½Á¬½ÓĞÅÏ¢ 
-     ±ÈÈçÀàËùÔÚÄ¿±ê¶ÔÏó»ò´úÀí¶ÔÏóµÄ²ÎÊı ·½·¨µÄ·µ»ØÀàĞÍ
- - @DeclareParents×¢½â»á¶ÔÆäËûÃ»ÓĞÊµÏÖ·½·¨µÄBean½øĞĞ·½·¨¿ËÂ¡
- - ÇĞÃæÊÇµ¥ÀıµÄ**ZiRoomAspectj**
- - ÇĞÃæÓÃÔ­ĞÍ´¦Àí
+ - JoinPointæ˜¯è¿æ¥ç‚¹ï¼Œå¯ä»¥æ ¹æ®è¿™ä¸ªå¯¹è±¡å¾—åˆ°è¿æ¥ä¿¡æ¯ 
+     æ¯”å¦‚ç±»æ‰€åœ¨ç›®æ ‡å¯¹è±¡æˆ–ä»£ç†å¯¹è±¡çš„å‚æ•° æ–¹æ³•çš„è¿”å›ç±»å‹
+ - @DeclareParentsæ³¨è§£ä¼šå¯¹å…¶ä»–æ²¡æœ‰å®ç°æ–¹æ³•çš„Beanè¿›è¡Œæ–¹æ³•å…‹éš†
+ - åˆ‡é¢æ˜¯å•ä¾‹çš„**ZiRoomAspectj**
+ - åˆ‡é¢ç”¨åŸå‹å¤„ç†
  ```
- @Aspect("perthis(this(com.ziroom.aop.dao.IndexDao))")  ÇĞÃæÉèÖÃÎªÔ­ĞÍ+ Ö¸¶¨ÀàĞÍÏÂÊÇÔ­ĞÍµÄ(¼´indexDaoÓÃµÄÊ±ºòÇĞÃæÊÇÔ­ĞÍ)
+ @Aspect("perthis(this(com.ziroom.aop.dao.IndexDao))")  åˆ‡é¢è®¾ç½®ä¸ºåŸå‹+ æŒ‡å®šç±»å‹ä¸‹æ˜¯åŸå‹çš„(å³indexDaoç”¨çš„æ—¶å€™åˆ‡é¢æ˜¯åŸå‹)
  @Scope("prototype")
  ```    
     
     
-
-   
