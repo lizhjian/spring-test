@@ -1,4 +1,4 @@
-# ioc-test
+# ioc-test1
 - [ioc的三种注入方式](https://shimo.im/docs/uKMbBVwL3dUusKHV/read)
   - 根据set方法/根据构造方法
     - 加入xmlns:c的命名空间可以用c:dao-ref 注入
